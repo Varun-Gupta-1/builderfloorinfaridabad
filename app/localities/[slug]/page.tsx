@@ -1,7 +1,6 @@
 import { notFound } from 'next/navigation';
 import { siteConfig } from '@/lib/siteConfig';
 import { buildMetadata, buildJsonLd } from '@/lib/seo';
-import { siteConfig } from '@/lib/siteConfig';
 import { localities } from '@/lib/localities';
 
 interface Params {
