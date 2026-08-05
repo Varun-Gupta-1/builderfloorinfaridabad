@@ -30,39 +30,8 @@ export default function HomePage() {
   return (
     <section className="container py-16">
       <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
-      <div className="grid gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:items-start">
-        <div>
-          <Hero />
-        </div>
-        <aside className="rounded-[28px] border border-slate-200 bg-slate-50 p-8 shadow-soft">
-          <p className="text-sm font-semibold uppercase tracking-[0.3em] text-slate-600">Why trust us</p>
-          <h2 className="mt-4 text-2xl font-semibold text-slate-950">Local experts for Faridabad builder floors</h2>
-          <ul className="mt-6 space-y-3 text-sm leading-7 text-slate-700">
-            <li>• Verified builder floor listings across Sector 15, Sector 14, Sector 21, Neharpar and Greater Faridabad.</li>
-            <li>• Fast responses — connect by WhatsApp or request a consultation.</li>
-            <li>• Local market reports and negotiation support for buyers and sellers.</li>
-          </ul>
-          <div className="mt-8 grid gap-4 sm:grid-cols-2">
-            <div className="rounded-3xl bg-white p-5 shadow-sm">
-              <p className="text-sm font-semibold text-slate-950">Verified Listings</p>
-              <p className="mt-2 text-sm text-slate-600">Each property is vetted before publishing to reduce wasted visits.</p>
-            </div>
-            <div className="rounded-3xl bg-white p-5 shadow-sm">
-              <p className="text-sm font-semibold text-slate-950">Dedicated Support</p>
-              <p className="mt-2 text-sm text-slate-600">A single point of contact until you close the deal.</p>
-            </div>
-          </div>
-          <div className="mt-8">
-              <div className="rounded-2xl bg-white p-6 shadow-sm">
-                <p className="text-sm font-semibold text-slate-950">Quick Contact</p>
-                <p className="mt-2 text-sm text-slate-600">Prefer a faster response? Call us or send a message and we'll get back quickly.</p>
-                <div className="mt-4 flex gap-3">
-                  <a href={`tel:${siteConfig.telephone}`} className="inline-flex items-center rounded-2xl border border-slate-300 px-4 py-2 text-sm font-semibold text-slate-900">Call</a>
-                  <a href={`https://wa.me/${siteConfig.telephone.replace('+', '').replace(/\D/g, '')}?text=${encodeURIComponent('Hi, I am interested in builder floors in Faridabad. Please share options.')}`} className="inline-flex items-center rounded-2xl bg-blue-600 px-4 py-2 text-sm font-semibold text-white">Text</a>
-                </div>
-              </div>
-            </div>
-        </aside>
+      <div>
+        <Hero />
       </div>
 
       <div className="mt-20 space-y-8">
@@ -78,6 +47,27 @@ export default function HomePage() {
           ))}
         </div>
       </div>
+
+      {/* Why Builder Floors / Why Trust Us */}
+      <section className="mt-20 rounded-[28px] border border-slate-200 bg-slate-50 p-8 shadow-soft">
+        <p className="text-sm font-semibold uppercase tracking-[0.3em] text-slate-600">Why trust us</p>
+        <h2 className="mt-4 text-2xl font-semibold text-slate-950">Local experts for Faridabad builder floors</h2>
+        <ul className="mt-6 space-y-3 text-sm leading-7 text-slate-700">
+          <li>• Verified builder floor listings across Sector 15, Sector 14, Sector 21, Neharpar and Greater Faridabad.</li>
+          <li>• Fast responses — call or message to get quick help.</li>
+          <li>• Local market reports and negotiation support for buyers and sellers.</li>
+        </ul>
+        <div className="mt-8 grid gap-4 sm:grid-cols-2">
+          <div className="rounded-3xl bg-white p-5 shadow-sm">
+            <p className="text-sm font-semibold text-slate-950">Verified Listings</p>
+            <p className="mt-2 text-sm text-slate-600">Each property is vetted before publishing to reduce wasted visits.</p>
+          </div>
+          <div className="rounded-3xl bg-white p-5 shadow-sm">
+            <p className="text-sm font-semibold text-slate-950">Dedicated Support</p>
+            <p className="mt-2 text-sm text-slate-600">A single point of contact until you close the deal.</p>
+          </div>
+        </div>
+      </section>
 
       <div className="mt-20">
         <h2 className="section-title">Find the right builder floor for your needs</h2>
@@ -117,19 +107,7 @@ export default function HomePage() {
         </ul>
       </div>
 
-      <div className="mt-20">
-        <h2 className="section-title">Trusted local expertise</h2>
-        <div className="mt-4 grid gap-4 md:grid-cols-2">
-          <div className="rounded-2xl border border-slate-200 bg-white p-6">
-            <p className="text-sm font-semibold text-slate-950">Years of local experience</p>
-            <p className="mt-2 text-sm text-slate-600">Our team has deep experience across Faridabad’s builder floor market.</p>
-          </div>
-          <div className="rounded-2xl border border-slate-200 bg-white p-6">
-            <p className="text-sm font-semibold text-slate-950">Transparent guidance</p>
-            <p className="mt-2 text-sm text-slate-600">Clear property checks, verified documents, and negotiation support.</p>
-          </div>
-        </div>
-      </div>
+      
 
       <div className="mt-20">
         <h2 className="section-title">Frequently asked questions</h2>
@@ -150,6 +128,20 @@ export default function HomePage() {
             <summary className="cursor-pointer font-medium">How can I contact you for property options?</summary>
             <p className="mt-2 text-sm text-slate-600">Use the WhatsApp button, call us, or submit the enquiry form and our team will respond promptly.</p>
           </details>
+        </div>
+      </div>
+
+      <div className="mt-20">
+        <h2 className="section-title">Trusted local expertise</h2>
+        <div className="mt-4 grid gap-4 md:grid-cols-2">
+          <div className="rounded-2xl border border-slate-200 bg-white p-6">
+            <p className="text-sm font-semibold text-slate-950">Years of local experience</p>
+            <p className="mt-2 text-sm text-slate-600">Our team has deep experience across Faridabad’s builder floor market.</p>
+          </div>
+          <div className="rounded-2xl border border-slate-200 bg-white p-6">
+            <p className="text-sm font-semibold text-slate-950">Transparent guidance</p>
+            <p className="mt-2 text-sm text-slate-600">Clear property checks, verified documents, and negotiation support.</p>
+          </div>
         </div>
       </div>
 
