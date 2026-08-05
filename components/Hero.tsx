@@ -15,13 +15,16 @@ export default function Hero() {
         <Link href="/builder-floors-faridabad" className="inline-flex items-center justify-center rounded-2xl bg-slate-950 px-6 py-3 text-sm font-semibold text-white transition hover:bg-slate-800">
           View Properties
         </Link>
+        <a href={`tel:${siteConfig.telephone}`} className="inline-flex items-center justify-center rounded-2xl border border-slate-300 px-6 py-3 text-sm font-semibold text-slate-950 transition hover:border-slate-400">
+          Call
+        </a>
         <a
           href={`https://wa.me/${siteConfig.telephone.replace('+', '').replace(/\D/g, '')}?text=${encodeURIComponent(
             'Hi, I am interested in builder floors in Faridabad. Please share available options.'
           )}`}
           className="inline-flex items-center justify-center rounded-2xl border border-slate-300 px-6 py-3 text-sm font-semibold text-slate-950 transition hover:border-slate-400"
         >
-          WhatsApp Now
+          Text
         </a>
       </div>
 

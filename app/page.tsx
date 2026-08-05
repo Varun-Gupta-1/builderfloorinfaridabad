@@ -53,8 +53,15 @@ export default function HomePage() {
             </div>
           </div>
           <div className="mt-8">
-            <ContactForm />
-          </div>
+              <div className="rounded-2xl bg-white p-6 shadow-sm">
+                <p className="text-sm font-semibold text-slate-950">Quick Contact</p>
+                <p className="mt-2 text-sm text-slate-600">Prefer a faster response? Call us or send a message and we'll get back quickly.</p>
+                <div className="mt-4 flex gap-3">
+                  <a href={`tel:${siteConfig.telephone}`} className="inline-flex items-center rounded-2xl border border-slate-300 px-4 py-2 text-sm font-semibold text-slate-900">Call</a>
+                  <a href={`https://wa.me/${siteConfig.telephone.replace('+', '').replace(/\D/g, '')}?text=${encodeURIComponent('Hi, I am interested in builder floors in Faridabad. Please share options.')}`} className="inline-flex items-center rounded-2xl bg-blue-600 px-4 py-2 text-sm font-semibold text-white">Text</a>
+                </div>
+              </div>
+            </div>
         </aside>
       </div>
 
@@ -150,27 +157,12 @@ export default function HomePage() {
         <h2 className="text-2xl font-semibold">Looking for a builder floor in Faridabad?</h2>
         <p className="mt-3 text-slate-600">Get tailored options fast — message us on WhatsApp or send an enquiry.</p>
         <div className="mt-6 flex items-center justify-center gap-4">
-          <a
-            href={`https://wa.me/${siteConfig.telephone.replace('+', '').replace(/\D/g, '')}?text=${encodeURIComponent(
-              'Hi, I am interested in builder floors in Faridabad. Please share available options and next steps.'
-            )}`}
-            className="inline-flex items-center rounded-2xl bg-green-600 px-5 py-3 text-sm font-semibold text-white"
-          >
-            WhatsApp
-          </a>
           <a href={`tel:${siteConfig.telephone}`} className="inline-flex items-center rounded-2xl border border-slate-300 px-5 py-3 text-sm font-semibold text-slate-900">Call</a>
-          <a
-            href={`https://wa.me/${siteConfig.telephone.replace('+', '').replace(/\D/g, '')}?text=${encodeURIComponent(
-              'Hi, I want to contact you regarding builder floors in Faridabad. Please get in touch.'
-            )}`}
-            className="inline-flex items-center rounded-2xl bg-blue-600 px-5 py-3 text-sm font-semibold text-white"
-          >
-            Contact Us
-          </a>
+          <a href={`https://wa.me/${siteConfig.telephone.replace('+', '').replace(/\D/g, '')}?text=${encodeURIComponent('Hi, I am interested in builder floors in Faridabad. Please share available options and next steps.')}`} className="inline-flex items-center rounded-2xl bg-blue-600 px-5 py-3 text-sm font-semibold text-white">Text</a>
         </div>
       </div>
 
-      <WhatsAppButton phone={siteConfig.telephone.replace('+', '').replace(/\D/g, '')} />
+      {/* Floating WhatsApp removed — footer keeps WhatsApp link */}
     </section>
   );
 }

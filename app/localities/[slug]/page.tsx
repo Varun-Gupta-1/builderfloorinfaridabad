@@ -72,14 +72,10 @@ export default function LocalityDetailPage({ params }: Params) {
             <p>• Comprehensive neighbourhood insights</p>
             <p>• Support for buyers and sellers</p>
           </div>
-          <a
-            href={`https://wa.me/${siteConfig.telephone.replace('+', '').replace(/\D/g, '')}?text=${encodeURIComponent(
-              `Hi, I am interested in builder floors in ${locality.name}. Please connect me with a local expert.`
-            )}`}
-            className="mt-8 inline-flex rounded-2xl bg-blue-600 px-6 py-3 text-sm font-semibold text-white transition hover:bg-blue-700"
-          >
-            Contact local expert
-          </a>
+          <div className="mt-8 flex gap-3">
+            <a href={`tel:${siteConfig.telephone}`} className="inline-flex rounded-2xl border border-slate-300 px-6 py-3 text-sm font-semibold text-slate-900">Call</a>
+            <a href={`https://wa.me/${siteConfig.telephone.replace('+', '').replace(/\D/g, '')}?text=${encodeURIComponent(`Hi, I am interested in builder floors in ${locality.name}. Please connect me with a local expert.`)}`} className="inline-flex rounded-2xl bg-blue-600 px-6 py-3 text-sm font-semibold text-white">Text</a>
+          </div>
         </aside>
       </div>
 
