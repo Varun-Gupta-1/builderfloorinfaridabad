@@ -20,6 +20,12 @@ export const metadata: Metadata = {
     title: siteConfig.name,
     description: siteConfig.description
   }
+  ,
+  icons: {
+    icon: '/favicon.svg',
+    shortcut: '/favicon.svg',
+    apple: '/favicon.svg'
+  }
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

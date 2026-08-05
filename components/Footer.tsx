@@ -22,9 +22,21 @@ export default function Footer() {
           </div>
           <div className="grid gap-2 sm:grid-cols-2">
             {footerLinks.map((link) => (
-              <Link key={link.href} href={link.href} className="text-sm text-slate-700 transition hover:text-slate-950">
-                {link.label}
-              </Link>
+              link.href === '/contact' ? (
+                <a
+                  key={link.href}
+                  href={`https://wa.me/${siteConfig.telephone.replace('+', '').replace(/\D/g, '')}?text=${encodeURIComponent(
+                    'Hi, I want to contact you about builder floors in Faridabad. Please get in touch.'
+                  )}`}
+                  className="text-sm text-slate-700 transition hover:text-slate-950"
+                >
+                  {link.label}
+                </a>
+              ) : (
+                <Link key={link.href} href={link.href} className="text-sm text-slate-700 transition hover:text-slate-950">
+                  {link.label}
+                </Link>
+              )
             ))}
           </div>
         </div>

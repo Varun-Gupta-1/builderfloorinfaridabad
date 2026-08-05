@@ -41,6 +41,14 @@ export const localities: Locality[] = [
     seoDescription: 'Search Neharpar builder floors in Faridabad for affordable homes with easy connectivity and local market support.'
   },
   {
+    slug: 'sector-37',
+    name: 'Sector 37',
+    description: 'Sector 37 offers well-planned streets and quality builder floors with proximity to schools and parks, a popular choice in Faridabad.',
+    highlights: ['Family-friendly neighbourhood', 'Good parks and schools', 'Well-connected roads'],
+    seoTitle: 'Sector 37 Builder Floors Faridabad | Family Homes',
+    seoDescription: 'Explore Sector 37 builder floors in Faridabad — family-oriented neighbourhood with quality listings and strong local amenities.'
+  },
+  {
     slug: 'greater-faridabad',
     name: 'Greater Faridabad',
     description: 'Expansive builder floor options in Greater Faridabad with premium developments and future-ready infrastructure.',

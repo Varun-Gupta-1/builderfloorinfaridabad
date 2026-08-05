@@ -2,12 +2,26 @@ import Link from 'next/link';
 import { buildMetadata, buildJsonLd } from '@/lib/seo';
 import { siteConfig } from '@/lib/siteConfig';
 import { localities } from '@/lib/localities';
+import LocalityCard from '@/components/LocalityCard';
+import ContactForm from '@/components/ContactForm';
+import Hero from '@/components/Hero';
+import WhatsAppButton from '@/components/WhatsAppButton';
 
 export const metadata = buildMetadata({
-  title: 'Builder Floor in Faridabad | Premium Builder Floors & Local Property Advice',
-  description: 'Find premium builder floors in Faridabad. Local real estate experts helping buyers and sellers in Sector 15, Sector 14, Sector 21, Neharpar and Greater Faridabad.',
+  title: 'Builder Floors in Faridabad | Sector 15, 21, Neharpar',
+  description:
+    'Explore builder floors in Faridabad with local guidance for Sector 15, Sector 14, Sector 21, Neharpar, and Greater Faridabad. Verified listings and fast responses for buyers and sellers.',
   pathname: '/',
-  keywords: ['builder floor in Faridabad', 'builder floors Faridabad', 'Faridabad builder floor', 'builder floors near me']
+  keywords: [
+    'builder floors in Faridabad',
+    'builder floor in Faridabad',
+    'builder floors near me',
+    'Sector 15 builder floors',
+    'Sector 14 builder floors',
+    'Sector 21 builder floors',
+    'Neharpar builder floors',
+    'Greater Faridabad builder floors'
+  ]
 });
 
 const jsonLd = buildJsonLd('/');
@@ -16,43 +30,32 @@ export default function HomePage() {
   return (
     <section className="container py-16">
       <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
-      <div className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+      <div className="grid gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:items-start">
         <div>
-          <p className="text-sm font-semibold uppercase tracking-[0.35em] text-blue-600">Faridabad Builder Floors</p>
-          <h1 className="mt-4 text-4xl font-semibold tracking-tight text-slate-950 sm:text-5xl">
-            Builder floor experts in Faridabad for buyers, sellers, and investors
-          </h1>
-          <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-700">
-            We connect Faridabad home buyers with trusted builder floors in Sector 15, Sector 14, Sector 21, Neharpar, and Greater Faridabad. Get local property guidance, verified listings, and fast responses from our real estate team.
-          </p>
-          <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-            <Link href="/builder-floors-faridabad" className="inline-flex items-center justify-center rounded-2xl bg-slate-950 px-6 py-3 text-sm font-semibold text-white transition hover:bg-slate-800">
-              View Properties
-            </Link>
-            <a href="https://wa.me/919999999999" target="_blank" rel="noreferrer" className="inline-flex items-center justify-center rounded-2xl border border-slate-300 px-6 py-3 text-sm font-semibold text-slate-950 transition hover:border-slate-400">
-              WhatsApp Now
-            </a>
-          </div>
+          <Hero />
         </div>
-        <div className="rounded-[32px] border border-slate-200 bg-slate-50 p-8 shadow-soft">
-          <p className="text-sm font-semibold uppercase tracking-[0.3em] text-slate-600">Local Lead Generation</p>
-          <h2 className="mt-4 text-2xl font-semibold text-slate-950">Fast connection to Faridabad builder floor deals</h2>
-          <ul className="mt-6 space-y-4 text-sm leading-7 text-slate-700">
-            <li>• Verified builder floor listings in established neighbourhoods.</li>
-            <li>• Expert local advice for Sector 15, Sector 14, Sector 21, Neharpar.</li>
-            <li>• Personalized support for buyers, sellers, and investors.</li>
+        <aside className="rounded-[28px] border border-slate-200 bg-slate-50 p-8 shadow-soft">
+          <p className="text-sm font-semibold uppercase tracking-[0.3em] text-slate-600">Why trust us</p>
+          <h2 className="mt-4 text-2xl font-semibold text-slate-950">Local experts for Faridabad builder floors</h2>
+          <ul className="mt-6 space-y-3 text-sm leading-7 text-slate-700">
+            <li>• Verified builder floor listings across Sector 15, Sector 14, Sector 21, Neharpar and Greater Faridabad.</li>
+            <li>• Fast responses — connect by WhatsApp or request a consultation.</li>
+            <li>• Local market reports and negotiation support for buyers and sellers.</li>
           </ul>
           <div className="mt-8 grid gap-4 sm:grid-cols-2">
             <div className="rounded-3xl bg-white p-5 shadow-sm">
-              <p className="text-sm font-semibold text-slate-950">Trusted Local Team</p>
-              <p className="mt-2 text-sm text-slate-600">Faridabad-focused property advisors with years of experience.</p>
+              <p className="text-sm font-semibold text-slate-950">Verified Listings</p>
+              <p className="mt-2 text-sm text-slate-600">Each property is vetted before publishing to reduce wasted visits.</p>
             </div>
             <div className="rounded-3xl bg-white p-5 shadow-sm">
-              <p className="text-sm font-semibold text-slate-950">Quality Listings</p>
-              <p className="mt-2 text-sm text-slate-600">Builder floors with strong resale and neighborhood appeal.</p>
+              <p className="text-sm font-semibold text-slate-950">Dedicated Support</p>
+              <p className="mt-2 text-sm text-slate-600">A single point of contact until you close the deal.</p>
             </div>
           </div>
-        </div>
+          <div className="mt-8">
+            <ContactForm />
+          </div>
+        </aside>
       </div>
 
       <div className="mt-20 space-y-8">
@@ -64,57 +67,110 @@ export default function HomePage() {
         </div>
         <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
           {localities.map((locality) => (
-            <article key={locality.slug} className="card">
-              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-blue-600">Locality</p>
-              <h3 className="mt-3 text-2xl font-semibold text-slate-950">{locality.name}</h3>
-              <p className="mt-4 text-sm leading-7 text-slate-600">{locality.description}</p>
-              <div className="mt-5 space-y-2 text-sm text-slate-600">
-                {locality.highlights.map((highlight) => (
-                  <p key={highlight} className="before:content-['•'] before:mr-2 before:text-blue-600 inline-flex">
-                    {highlight}
-                  </p>
-                ))}
-              </div>
-              <a href={`/localities/${locality.slug}`} className="mt-6 inline-flex text-sm font-semibold text-blue-600 transition hover:text-blue-700">
-                Explore {locality.name}
-              </a>
-            </article>
+            <LocalityCard key={locality.slug} locality={locality} />
           ))}
         </div>
       </div>
 
-      <div className="mt-24 grid gap-10 lg:grid-cols-[1.05fr_0.95fr]">
-        <div className="card">
-          <h2 className="text-3xl font-semibold text-slate-950">Why choose builder floors in Faridabad?</h2>
-          <p className="mt-5 text-slate-600 leading-7">
-            Builder floors in Faridabad offer a premium lifestyle with more privacy, modern finishes, and better neighbourhood control than an apartment. We specialize in properties near top localities like Sector 15, Sector 14, Sector 21, Neharpar and Greater Faridabad.
-          </p>
-          <div className="mt-8 grid gap-4 md:grid-cols-2">
-            <div className="rounded-3xl border border-slate-200 bg-white p-6">
-              <p className="text-sm font-semibold text-slate-950">Prime locations</p>
-              <p className="mt-3 text-sm text-slate-600">Local neighborhoods with strong connectivity and growth prospects.</p>
+      <div className="mt-20">
+        <h2 className="section-title">Find the right builder floor for your needs</h2>
+        <p className="mt-3 text-slate-600">Choose by move-in timeline, budget, or lifestyle — we list options for every buyer.</p>
+        <div className="mt-6 grid gap-4 sm:grid-cols-2 md:grid-cols-3">
+          {[
+            { title: 'New builder floors', desc: 'Latest projects with modern finishes.' },
+            { title: 'Ready-to-move floors', desc: 'Immediate possession options.' },
+            { title: 'Luxury floors', desc: 'Premium layouts and high-end finishes.' },
+            { title: 'Budget options', desc: 'Value-led choices for cost-conscious buyers.' },
+            { title: 'Family homes', desc: 'Spacious floors near schools and parks.' },
+            { title: 'Investment properties', desc: 'High ROI areas and resale-ready options.' }
+          ].map((s) => (
+            <div key={s.title} className="rounded-2xl border border-slate-200 bg-white p-6">
+              <p className="text-sm font-semibold text-slate-950">{s.title}</p>
+              <p className="mt-2 text-sm text-slate-600">{s.desc}</p>
             </div>
-            <div className="rounded-3xl border border-slate-200 bg-white p-6">
-              <p className="text-sm font-semibold text-slate-950">Smart investment</p>
-              <p className="mt-3 text-sm text-slate-600">Builder floors retain value well in Faridabad’s best sectors.</p>
-            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className="mt-20">
+        <h2 className="section-title">Builder floors near you in Faridabad</h2>
+        <p className="mt-3 text-slate-600">Search by locality to find nearby builder floors across Faridabad.</p>
+        <ul className="mt-4 grid gap-2 sm:grid-cols-2 md:grid-cols-3 text-sm">
+          {['sector-15', 'sector-14', 'sector-21', 'neharpar', 'sector-37', 'greater-faridabad'].map((slug) => {
+            const loc = localities.find((l) => l.slug === slug);
+            if (!loc) return null;
+            return (
+              <li key={slug} className="">
+                <Link href={`/localities/${loc.slug}`} className="text-blue-600 hover:underline">
+                  {loc.name} builder floors
+                </Link>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+
+      <div className="mt-20">
+        <h2 className="section-title">Trusted local expertise</h2>
+        <div className="mt-4 grid gap-4 md:grid-cols-2">
+          <div className="rounded-2xl border border-slate-200 bg-white p-6">
+            <p className="text-sm font-semibold text-slate-950">Years of local experience</p>
+            <p className="mt-2 text-sm text-slate-600">Our team has deep experience across Faridabad’s builder floor market.</p>
+          </div>
+          <div className="rounded-2xl border border-slate-200 bg-white p-6">
+            <p className="text-sm font-semibold text-slate-950">Transparent guidance</p>
+            <p className="mt-2 text-sm text-slate-600">Clear property checks, verified documents, and negotiation support.</p>
           </div>
         </div>
-        <div className="rounded-[32px] border border-slate-200 bg-slate-50 p-8">
-          <h2 className="text-3xl font-semibold text-slate-950">Need an expert property consultation?</h2>
-          <p className="mt-5 text-slate-600 leading-7">
-            Contact us for a tailored builder floor search in Faridabad. We help buyers and sellers make confident decisions with local market insight and verified property options.
-          </p>
-          <div className="mt-8 space-y-4 text-sm text-slate-700">
-            <p>• Personalized property matches in Faridabad.</p>
-            <p>• Quick response for local builder floor inquiries.</p>
-            <p>• Trusted agent support for negotiation and closing.</p>
-          </div>
-          <a href="/contact" className="mt-8 inline-flex rounded-2xl bg-blue-600 px-6 py-3 text-sm font-semibold text-white transition hover:bg-blue-700">
+      </div>
+
+      <div className="mt-20">
+        <h2 className="section-title">Frequently asked questions</h2>
+        <div className="mt-4 space-y-4">
+          <details className="rounded-lg border border-slate-200 bg-white p-4">
+            <summary className="cursor-pointer font-medium">What is the best locality for builder floors in Faridabad?</summary>
+            <p className="mt-2 text-sm text-slate-600">Sector 15 and Sector 14 are popular choices for premium builder floors; Neharpar and Sector 37 are value-focused areas.</p>
+          </details>
+          <details className="rounded-lg border border-slate-200 bg-white p-4">
+            <summary className="cursor-pointer font-medium">Are builder floors a good investment in Faridabad?</summary>
+            <p className="mt-2 text-sm text-slate-600">Well-located builder floors often have steady demand and good resale potential, especially in established sectors.</p>
+          </details>
+          <details className="rounded-lg border border-slate-200 bg-white p-4">
+            <summary className="cursor-pointer font-medium">Which sectors have premium builder floors?</summary>
+            <p className="mt-2 text-sm text-slate-600">Sector 15, Sector 14 and Sector 21 are known for premium builder floor communities.</p>
+          </details>
+          <details className="rounded-lg border border-slate-200 bg-white p-4">
+            <summary className="cursor-pointer font-medium">How can I contact you for property options?</summary>
+            <p className="mt-2 text-sm text-slate-600">Use the WhatsApp button, call us, or submit the enquiry form and our team will respond promptly.</p>
+          </details>
+        </div>
+      </div>
+
+      <div className="mt-16 rounded-2xl border border-slate-200 bg-gradient-to-r from-white to-slate-50 p-8 text-center">
+        <h2 className="text-2xl font-semibold">Looking for a builder floor in Faridabad?</h2>
+        <p className="mt-3 text-slate-600">Get tailored options fast — message us on WhatsApp or send an enquiry.</p>
+        <div className="mt-6 flex items-center justify-center gap-4">
+          <a
+            href={`https://wa.me/${siteConfig.telephone.replace('+', '').replace(/\D/g, '')}?text=${encodeURIComponent(
+              'Hi, I am interested in builder floors in Faridabad. Please share available options and next steps.'
+            )}`}
+            className="inline-flex items-center rounded-2xl bg-green-600 px-5 py-3 text-sm font-semibold text-white"
+          >
+            WhatsApp
+          </a>
+          <a href={`tel:${siteConfig.telephone}`} className="inline-flex items-center rounded-2xl border border-slate-300 px-5 py-3 text-sm font-semibold text-slate-900">Call</a>
+          <a
+            href={`https://wa.me/${siteConfig.telephone.replace('+', '').replace(/\D/g, '')}?text=${encodeURIComponent(
+              'Hi, I want to contact you regarding builder floors in Faridabad. Please get in touch.'
+            )}`}
+            className="inline-flex items-center rounded-2xl bg-blue-600 px-5 py-3 text-sm font-semibold text-white"
+          >
             Contact Us
           </a>
         </div>
       </div>
+
+      <WhatsAppButton phone={siteConfig.telephone.replace('+', '').replace(/\D/g, '')} />
     </section>
   );
 }

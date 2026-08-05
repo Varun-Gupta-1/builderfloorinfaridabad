@@ -17,14 +17,31 @@ export default function Header() {
           {siteConfig.name}
         </Link>
         <nav className="hidden gap-8 md:flex text-sm text-slate-700">
-          {navItems.map((item) => (
-            <Link key={item.href} href={item.href} className="transition hover:text-slate-950">
-              {item.label}
-            </Link>
-          ))}
+          {navItems.map((item) => {
+            if (item.href === '/contact') {
+              return (
+                <a
+                  key={item.href}
+                  href={`https://wa.me/${siteConfig.telephone.replace('+', '').replace(/\D/g, '')}?text=${encodeURIComponent(
+                    'Hi, I want to contact you about builder floors in Faridabad. Please get in touch.'
+                  )}`}
+                  className="transition hover:text-slate-950"
+                >
+                  {item.label}
+                </a>
+              );
+            }
+            return (
+              <Link key={item.href} href={item.href} className="transition hover:text-slate-950">
+                {item.label}
+              </Link>
+            );
+          })}
         </nav>
         <a
-          href="https://wa.me/919999999999"
+          href={`https://wa.me/${siteConfig.telephone.replace('+', '').replace(/\D/g, '')}?text=${encodeURIComponent(
+            'Hi, I am interested in builder floors in Faridabad. Please share options.'
+          )}`}
           target="_blank"
           rel="noreferrer"
           className="rounded-full bg-blue-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-blue-700"

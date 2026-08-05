@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { siteConfig } from '@/lib/siteConfig';
 import { buildMetadata, buildJsonLd } from '@/lib/seo';
 
 export const metadata = buildMetadata({
@@ -64,9 +65,14 @@ export default function BuilderFloorsPage() {
           <p className="mt-4 text-slate-600 leading-7">
             Whether you are searching for builder floors in Sector 21 or Neharpar, our local advisors provide a reliable process from search to signing.
           </p>
-          <Link href="/contact" className="mt-8 inline-flex rounded-2xl bg-blue-600 px-6 py-3 text-sm font-semibold text-white transition hover:bg-blue-700">
+          <a
+            href={`https://wa.me/${siteConfig.telephone.replace('+', '').replace(/\D/g, '')}?text=${encodeURIComponent(
+              'Hi, I would like to schedule a consultation for builder floors in Faridabad. Please advise availability.'
+            )}`}
+            className="mt-8 inline-flex rounded-2xl bg-blue-600 px-6 py-3 text-sm font-semibold text-white transition hover:bg-blue-700"
+          >
             Schedule a consultation
-          </Link>
+          </a>
         </aside>
       </div>
 
