@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation';
 import { siteConfig } from '@/lib/siteConfig';
 import { buildMetadata, buildJsonLd } from '@/lib/seo';
+import { siteConfig } from '@/lib/siteConfig';
 import { localities } from '@/lib/localities';
 
 interface Params {
@@ -22,12 +23,19 @@ export function generateMetadata({ params }: Params) {
     };
   }
 
-  return buildMetadata({
+  const meta = buildMetadata({
     title: locality.seoTitle,
     description: locality.seoDescription,
     pathname: `/localities/${locality.slug}`,
     keywords: ['builder floors Faridabad', `builder floors ${locality.name}`]
-  });
+  }) as any;
+
+  // add locality-specific OG image
+  const imageUrl = `${siteConfig.url}/og/${locality.slug}.png`;
+  meta.openGraph = { ...(meta.openGraph || {}), images: [imageUrl] };
+  meta.twitter = { ...(meta.twitter || {}), images: [imageUrl] };
+
+  return meta;
 }
 
 export default function LocalityDetailPage({ params }: Params) {
