@@ -11,4 +11,14 @@ export const siteConfig = {
     postalCode: '121001',
     country: 'India'
   }
+  ,
+  // Add social/profile links to improve JSON-LD `sameAs`
+  sameAs: [
+    // e.g. 'https://www.facebook.com/yourpage',
+  ],
+  // Approximate geo coordinates for Faridabad (lat, lng)
+  geo: {
+    latitude: 28.4089,
+    longitude: 77.3178
+  }
 };

@@ -86,8 +86,71 @@ export function buildJsonLd(pathname: string) {
       postalCode: siteConfig.address.postalCode,
       addressCountry: siteConfig.address.country
     },
-    sameAs: []
+    sameAs: siteConfig.sameAs || []
   };
 
-  return [agent, org];
+  const localBusiness = {
+    '@context': 'https://schema.org',
+    '@type': 'LocalBusiness',
+    name: siteConfig.name,
+    image: `${siteConfig.url}/favicon.svg`,
+    '@id': siteConfig.url,
+    url: siteConfig.url,
+    telephone: siteConfig.telephone,
+    email: siteConfig.email,
+    address: org.address,
+    geo: {
+      '@type': 'GeoCoordinates',
+      latitude: siteConfig.geo?.latitude ?? 0,
+      longitude: siteConfig.geo?.longitude ?? 0
+    },
+    sameAs: siteConfig.sameAs || []
+  };
+
+  // FAQ schema for homepage
+  const faqPage = (pathname === '/')
+    ? {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: [
+          {
+            '@type': 'Question',
+            name: 'What is the best locality for builder floors in Faridabad?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Sector 15 and Sector 14 are popular choices for premium builder floors; Neharpar and Sector 37 are value-focused areas.'
+            }
+          },
+          {
+            '@type': 'Question',
+            name: 'Are builder floors a good investment in Faridabad?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Well-located builder floors often have steady demand and good resale potential, especially in established sectors.'
+            }
+          },
+          {
+            '@type': 'Question',
+            name: 'Which sectors have premium builder floors?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Sector 15, Sector 14 and Sector 21 are known for premium builder floor communities.'
+            }
+          },
+          {
+            '@type': 'Question',
+            name: 'How can I contact you for property options?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Call us, send a message, or submit the enquiry form and our team will respond promptly.'
+            }
+          }
+        ]
+      }
+    : null;
+
+  const jsonLd: any[] = [agent, org, localBusiness];
+  if (faqPage) jsonLd.push(faqPage);
+
+  return jsonLd;
 }
