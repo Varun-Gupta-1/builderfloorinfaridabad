@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="200" height="200" rx="32" fill="#FFFFFF"/>
+  <path d="M44 144V90L70 72L96 90V144H80V106L70 100L60 106V144H44Z" fill="#2C3E50"/>
+  <path d="M112 144V82H146V100H132V118H146V144H112Z" fill="#2C3E50"/>
+  <rect x="64" y="62" width="72" height="18" rx="9" fill="#D4AF37"/>
+  <path d="M46 144H154" stroke="#D4AF37" stroke-width="14" stroke-linecap="round"/>
+  <text x="100" y="184" font-family="Montserrat, sans-serif" font-size="22" font-weight="700" text-anchor="middle" fill="#2C3E50">Metro Floors</text>
+</svg>

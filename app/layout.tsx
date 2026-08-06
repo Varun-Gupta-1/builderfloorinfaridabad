@@ -26,9 +26,9 @@ export const metadata: Metadata = {
       'Luxury 3BHK & 4BHK independent builder floors in Gurgaon, Faridabad, Mumbai & Noida. Modern amenities, prime locations. Headquarters in Gurgaon. Call +91-XXXXXXXXXX for site visits.'
   },
   icons: {
-    icon: '/favicon.svg',
-    shortcut: '/favicon.svg',
-    apple: '/favicon.svg'
+    icon: '/assets/images/favicon.ico',
+    shortcut: '/assets/images/favicon.ico',
+    apple: '/assets/images/apple-touch-icon.png'
   }
 };
 
