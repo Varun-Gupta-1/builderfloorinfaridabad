@@ -2,8 +2,8 @@ import Link from 'next/link';
 import { buildMetadata, buildJsonLd } from '@/lib/seo';
 
 export const metadata = buildMetadata({
-  title: 'Mumbai Builder Floors | Luxury Living',
-  description: 'Discover luxury builder floor and penthouse projects in Mumbai with premium neighbourhoods and city-edge access.',
+  title: 'Builder Floors in Mumbai | Premium Residential Properties | Metro Floors',
+  description: 'Builder Floors in Mumbai near Powai, Bandra and Lower Parel with skyline views, luxury interiors and prices from ₹4.8 Cr to ₹9.5 Cr with concierge support',
   pathname: '/cities/mumbai',
   keywords: ['Mumbai builder floors', 'Mumbai luxury floors', 'builder floors Mumbai']
 });

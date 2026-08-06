@@ -25,10 +25,10 @@ export default function Hero() {
           <div className="space-y-6 text-center text-white">
             <p className="text-sm font-semibold uppercase tracking-[0.35em] text-cyan-300">Luxury builder floors</p>
             <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl">
-              Premium Builder Floors Across India&apos;s Metro Cities
+              Premium builder floors in Gurgaon, Faridabad, Mumbai and Noida with luxury independent floors and 3BHK 4BHK builder floors built for modern amenities.
             </h1>
             <p className="mx-auto max-w-2xl text-base leading-8 text-slate-100 sm:text-lg">
-              Discover luxury construction, smart home design, and curated urban living in Gurgaon, Faridabad, Mumbai, and Noida.
+              Metro Floors helps you find ready to move independent residential homes and premium properties, combining city-edge convenience with trusted design, lifestyle value and a professional search experience.
             </p>
             <div className="mx-auto flex flex-col gap-4 sm:flex-row sm:justify-center">
               <a href="#contact" className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-cyan-500 to-sky-600 px-7 py-3 text-sm font-semibold text-white shadow-lg transition hover:brightness-110">

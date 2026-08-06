@@ -27,7 +27,10 @@ export default function Header() {
     <header className={`fixed inset-x-0 top-0 z-50 transition ${scrolled ? 'bg-white/90 shadow-sm backdrop-blur-xl' : 'bg-transparent'} `}>
       <div className="container mx-auto flex items-center justify-between gap-4 px-4 py-4 md:px-0">
         <Link href="#home" className="text-lg font-semibold text-slate-950">
-          {siteConfig.name}
+          <div>Metro Floors</div>
+          <div className="hidden text-xs font-normal text-slate-700 opacity-70 md:block">
+            Gurgaon | Faridabad | Mumbai | Noida
+          </div>
         </Link>
 
         <nav className="hidden items-center gap-8 md:flex text-sm font-medium text-slate-700">

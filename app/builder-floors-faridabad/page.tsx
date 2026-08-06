@@ -14,6 +14,7 @@ const jsonLd = buildJsonLd('/builder-floors-faridabad');
 export default function BuilderFloorsPage() {
   return (
     <section className="container py-16">
+      <div data-page-city="faridabad" className="hidden" />
       <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
       <div className="max-w-4xl space-y-8">
         <p className="text-sm font-semibold uppercase tracking-[0.35em] text-blue-600">Builder Floors Faridabad</p>
@@ -67,7 +68,14 @@ export default function BuilderFloorsPage() {
           </p>
           <div className="mt-8 flex gap-3">
             <a href={`tel:${siteConfig.telephone}`} className="inline-flex rounded-2xl border border-slate-300 px-6 py-3 text-sm font-semibold text-slate-900">Call</a>
-            <a href={`https://wa.me/${siteConfig.telephone.replace('+', '').replace(/\D/g, '')}?text=${encodeURIComponent('Hi, I would like to schedule a consultation for builder floors in Faridabad. Please advise availability.')}`} className="inline-flex rounded-2xl bg-blue-600 px-6 py-3 text-sm font-semibold text-white">Text</a>
+            <a
+            href={`https://wa.me/${siteConfig.telephone.replace('+', '').replace(/\D/g, '')}`}
+            data-whatsapp="true"
+            data-phone={siteConfig.telephone.replace('+', '').replace(/\D/g, '')}
+            className="inline-flex rounded-2xl bg-blue-600 px-6 py-3 text-sm font-semibold text-white"
+          >
+            Text
+          </a>
           </div>
         </aside>
       </div>

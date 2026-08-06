@@ -81,7 +81,14 @@ export default function LocalityDetailPage({ params }: Params) {
           </div>
           <div className="mt-8 flex gap-3">
             <a href={`tel:${siteConfig.telephone}`} className="inline-flex rounded-2xl border border-slate-300 px-6 py-3 text-sm font-semibold text-slate-900">Call</a>
-            <a href={`https://wa.me/${siteConfig.telephone.replace('+', '').replace(/\D/g, '')}?text=${encodeURIComponent(`Hi, I am interested in builder floors in ${locality.name}. Please connect me with a local expert.`)}`} className="inline-flex rounded-2xl bg-blue-600 px-6 py-3 text-sm font-semibold text-white">Text</a>
+            <a
+            href={`https://wa.me/${siteConfig.telephone.replace('+', '').replace(/\D/g, '')}`}
+            data-whatsapp="true"
+            data-phone={siteConfig.telephone.replace('+', '').replace(/\D/g, '')}
+            className="inline-flex rounded-2xl bg-blue-600 px-6 py-3 text-sm font-semibold text-white"
+          >
+            Text
+          </a>
           </div>
         </aside>
       </div>

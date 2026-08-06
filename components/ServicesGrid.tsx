@@ -40,7 +40,7 @@ export default function ServicesGrid() {
           End-to-end real estate services for premium properties.
         </h2>
         <p className="mt-4 text-base leading-8 text-slate-600">
-          From customized builder floors to luxurious penthouses and trusted legal support, our solutions are built for metro-city buyers and investors.
+          Our service offering is built for buyers seeking premium builder floors in Gurgaon, Faridabad, Mumbai and Noida. We support luxury independent floors, ready to move 3BHK 4BHK builder floors, independent residential design and modern amenities with project matchmaking, legal clarity and move-in ready guidance.
         </p>
       </div>
 

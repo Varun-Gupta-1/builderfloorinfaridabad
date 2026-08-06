@@ -2,8 +2,8 @@ import Link from 'next/link';
 import { buildMetadata, buildJsonLd } from '@/lib/seo';
 
 export const metadata = buildMetadata({
-  title: 'Noida Builder Floors | Modern Living',
-  description: 'Find modern builder floor opportunities in Noida with planned infrastructure, tech access, and contemporary design.',
+  title: 'Builder Floors in Noida | Modern Independent Floors | Metro Floors',
+  description: 'Builder Floors in Noida near Sector 150, Noida Extension and Sector 128 with smart amenities, modern finishes and prices from ₹2.1 Cr to ₹3.9 Cr and more.',
   pathname: '/cities/noida',
   keywords: ['Noida builder floors', 'builder floors Noida', 'Noida real estate']
 });

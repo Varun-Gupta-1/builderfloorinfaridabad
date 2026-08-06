@@ -2,10 +2,11 @@ import { siteConfig } from '@/lib/siteConfig';
 
 export default function WhatsAppButton({ phone }: { phone?: string }) {
   const tel = (phone ?? siteConfig.telephone).replace('+', '').replace(/\D/g, '');
-  const message = encodeURIComponent('Hi, I am interested in builder floors in Faridabad. Please share available options.');
   return (
     <a
-      href={`https://wa.me/${tel}?text=${message}`}
+      href={`https://wa.me/${tel}`}
+      data-whatsapp="true"
+      data-phone={tel}
       target="_blank"
       rel="noreferrer"
       aria-label="WhatsApp Builder Floor Enquiry"

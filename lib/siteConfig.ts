@@ -1,27 +1,27 @@
 export const siteConfig = {
-  name: 'Builder Floor in Faridabad',
-  description: 'Premium builder floor specialists in Faridabad. Trusted local real estate advisory for buyers, sellers, and investors in Sector 15, Sector 14, Sector 21, Neharpar, and Greater Faridabad.',
+  name: 'Metro Floors',
+  description: 'Premium builder floor specialists in Gurgaon, Faridabad, Mumbai and Noida. Trusted real estate advisory for luxury independent floors and ready-to-move residential investments.',
   url: process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.builderfloorinfaridabad.in',
   telephone: '+919289322289',
   email: 'info@builderfloorinfaridabad.com',
   address: {
-    street: 'Near Sector 15 Market',
-    city: 'Faridabad',
+    street: 'Sector 45, Golf Course Road',
+    city: 'Gurgaon',
     region: 'Haryana',
-    postalCode: '121001',
+    postalCode: '122002',
     country: 'India'
   },
   locations: [
     {
-      name: 'Gurgaon HQ',
+      name: 'Gurgaon Headquarters',
       address: {
-        street: 'Sohna Road',
+        street: 'Sector 45, Golf Course Road',
         city: 'Gurgaon',
         region: 'Haryana',
-        postalCode: '122001',
+        postalCode: '122002',
         country: 'India'
       },
-      geo: { latitude: 28.4595, longitude: 77.0266 }
+      geo: { latitude: 28.5032, longitude: 77.0662 }
     },
     {
       name: 'Faridabad Branch',
@@ -43,7 +43,7 @@ export const siteConfig = {
         postalCode: '400076',
         country: 'India'
       },
-      geo: { latitude: 19.1170, longitude: 72.9040 }
+      geo: { latitude: 19.117, longitude: 72.904 }
     },
     {
       name: 'Noida Branch',
@@ -57,13 +57,13 @@ export const siteConfig = {
       geo: { latitude: 28.5712, longitude: 77.3161 }
     }
   ],
-  // Add social/profile links to improve JSON-LD `sameAs`
   sameAs: [
-    // e.g. 'https://www.facebook.com/yourpage',
+    'https://www.facebook.com/MetroFloorsIndia',
+    'https://www.instagram.com/metro.floors',
+    'https://www.linkedin.com/company/metro-floors'
   ],
-  // Approximate geo coordinates for Faridabad (lat, lng)
   geo: {
-    latitude: 28.4089,
-    longitude: 77.3178
+    latitude: 28.5032,
+    longitude: 77.0662
   }
 };
