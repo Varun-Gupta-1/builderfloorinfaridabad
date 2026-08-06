@@ -1,10 +1,11 @@
 import { NextResponse } from 'next/server';
+import { siteConfig } from '@/lib/siteConfig';
 
 export function GET() {
   const content = `User-agent: *
 Allow: /
 
-Sitemap: ${process.env.NEXT_PUBLIC_SITE_URL ?? 'https://builderfloorinfaridabad.com'}/sitemap.xml
+Sitemap: ${siteConfig.url}/sitemap.xml
 `;
 
   return new NextResponse(content, {

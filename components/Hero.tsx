@@ -1,38 +1,60 @@
 import Link from 'next/link';
 import { siteConfig } from '@/lib/siteConfig';
+import LazyImage from '@/components/LazyImage';
+
+const heroImage = {
+  src: 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1400&q=80',
+  webpSrc: 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1400&q=80&fm=webp',
+  avifSrc: 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1400&q=80&fm=avif'
+};
 
 export default function Hero() {
   return (
-    <header className="max-w-3xl">
-      <p className="text-sm font-semibold uppercase tracking-[0.35em] text-blue-600">Faridabad Builder Floors</p>
-      <h1 className="mt-4 text-4xl font-semibold tracking-tight text-slate-950 sm:text-5xl">Builder Floors in Faridabad</h1>
-
-      <p className="mt-6 text-lg leading-8 text-slate-700">
-        Find verified builder floors in Faridabad. Browse listings in Sector 15, Sector 14, Sector 21, Neharpar, Sector 37 and Greater Faridabad — get local property guidance, fast responses, and personalized matches.
-      </p>
-
-      <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-        <Link href="/builder-floors-faridabad" className="inline-flex items-center justify-center rounded-2xl bg-slate-950 px-6 py-3 text-sm font-semibold text-white transition hover:bg-slate-800">
-          View Properties
-        </Link>
-        <a href={`tel:${siteConfig.telephone}`} className="inline-flex items-center justify-center rounded-2xl border border-slate-300 px-6 py-3 text-sm font-semibold text-slate-950 transition hover:border-slate-400">
-          Call
-        </a>
-        <a
-          href={`https://wa.me/${siteConfig.telephone.replace('+', '').replace(/\D/g, '')}?text=${encodeURIComponent(
-            'Hi, I am interested in builder floors in Faridabad. Please share available options.'
-          )}`}
-          className="inline-flex items-center justify-center rounded-2xl border border-slate-300 px-6 py-3 text-sm font-semibold text-slate-950 transition hover:border-slate-400"
-        >
-          Text
-        </a>
+    <section id="home" className="relative overflow-hidden pb-24" aria-label="Builder floor hero section">
+      <LazyImage
+        src={heroImage.src}
+        webpSrc={heroImage.webpSrc}
+        avifSrc={heroImage.avifSrc}
+        alt="Hero view of premium builder floors in a luxury residential project"
+        className="absolute inset-0 h-full w-full object-cover"
+        priority
+      />
+      <div className="absolute inset-0 bg-slate-950/70" />
+      <div className="container relative mx-auto px-4 py-32 sm:px-6 lg:px-8">
+        <div className="max-w-3xl rounded-[40px] border border-white/10 bg-white/10 p-10 shadow-2xl backdrop-blur-xl">
+          <div className="space-y-6 text-center text-white">
+            <p className="text-sm font-semibold uppercase tracking-[0.35em] text-cyan-300">Luxury builder floors</p>
+            <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl">
+              Premium Builder Floors Across India&apos;s Metro Cities
+            </h1>
+            <p className="mx-auto max-w-2xl text-base leading-8 text-slate-100 sm:text-lg">
+              Discover luxury construction, smart home design, and curated urban living in Gurgaon, Faridabad, Mumbai, and Noida.
+            </p>
+            <div className="mx-auto flex flex-col gap-4 sm:flex-row sm:justify-center">
+              <a href="#contact" className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-cyan-500 to-sky-600 px-7 py-3 text-sm font-semibold text-white shadow-lg transition hover:brightness-110">
+                Schedule Site Visit
+              </a>
+              <Link href="#projects" className="inline-flex items-center justify-center rounded-full border border-white/30 bg-white/10 px-7 py-3 text-sm font-semibold text-white transition hover:bg-white/20">
+                View Projects
+              </Link>
+            </div>
+            <div className="grid gap-4 sm:grid-cols-3 text-sm text-slate-200">
+              <div className="rounded-3xl bg-white/10 px-4 py-3">
+                <p className="font-semibold">Metro coverage</p>
+                <p className="mt-2">Gurgaon, Faridabad, Mumbai, Noida</p>
+              </div>
+              <div className="rounded-3xl bg-white/10 px-4 py-3">
+                <p className="font-semibold">Trusted developers</p>
+                <p className="mt-2">Premium, verified partners</p>
+              </div>
+              <div className="rounded-3xl bg-white/10 px-4 py-3">
+                <p className="font-semibold">High-touch support</p>
+                <p className="mt-2">From site visits to handover</p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-
-      <ul className="mt-6 flex flex-col gap-2 text-sm text-slate-600 sm:flex-row sm:items-center sm:gap-6">
-        <li>• Local Faridabad property guidance</li>
-        <li>• Fast response for enquiries</li>
-        <li>• Verified listings & clear paperwork</li>
-      </ul>
-    </header>
+    </section>
   );
 }
