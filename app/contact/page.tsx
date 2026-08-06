@@ -1,5 +1,6 @@
 import { buildMetadata, buildJsonLd } from '@/lib/seo';
 import ContactForm from '@/components/ContactForm';
+import { siteConfig } from '@/lib/siteConfig';
 
 export const metadata = buildMetadata({
   title: 'Contact Builder Floor in Faridabad | Local Real Estate Support',
@@ -24,7 +25,7 @@ export default function ContactPage() {
           <div className="grid gap-4 rounded-[32px] border border-slate-200 bg-slate-50 p-8">
             <div>
               <p className="text-sm font-semibold text-slate-950">Phone</p>
-              <p className="mt-2 text-sm text-slate-600">{process.env.NEXT_PUBLIC_PHONE ?? '+91 99999 99999'}</p>
+              <p className="mt-2 text-sm text-slate-600">{siteConfig.telephone}</p>
             </div>
             <div>
               <p className="text-sm font-semibold text-slate-950">Email</p>

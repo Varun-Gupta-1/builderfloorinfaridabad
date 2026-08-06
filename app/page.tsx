@@ -70,8 +70,8 @@ export default function HomePage() {
       </section>
 
       <div className="mt-20">
-        <h2 className="section-title">Find the right builder floor for your needs</h2>
-        <p className="mt-3 text-slate-600">Choose by move-in timeline, budget, or lifestyle — we list options for every buyer.</p>
+        <h2 className="section-title">Match properties to your priorities</h2>
+        <p className="mt-3 text-slate-600">Search by move-in timeline, budget, or lifestyle — find the right home for your next Faridabad move.</p>
         <div className="mt-6 grid gap-4 sm:grid-cols-2 md:grid-cols-3">
           {[
             { title: 'New builder floors', desc: 'Latest projects with modern finishes.' },
@@ -147,7 +147,7 @@ export default function HomePage() {
 
       <div className="mt-16 rounded-2xl border border-slate-200 bg-gradient-to-r from-white to-slate-50 p-8 text-center">
         <h2 className="text-2xl font-semibold">Looking for a builder floor in Faridabad?</h2>
-        <p className="mt-3 text-slate-600">Get tailored options fast — message us on WhatsApp or send an enquiry.</p>
+        <p className="mt-3 text-slate-600">Get tailored property options fast — message us on WhatsApp or use the enquiry form.</p>
         <div className="mt-6 flex items-center justify-center gap-4">
           <a href={`tel:${siteConfig.telephone}`} className="inline-flex items-center rounded-2xl border border-slate-300 px-5 py-3 text-sm font-semibold text-slate-900">Call</a>
           <a href={`https://wa.me/${siteConfig.telephone.replace('+', '').replace(/\D/g, '')}?text=${encodeURIComponent('Hi, I am interested in builder floors in Faridabad. Please share available options and next steps.')}`} className="inline-flex items-center rounded-2xl bg-blue-600 px-5 py-3 text-sm font-semibold text-white">Text</a>
